@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "player.h"
+#include "chaserEnemy.h"
 using namespace sf;
 
 int main() {
@@ -8,6 +9,7 @@ int main() {
 	RenderWindow window(VideoMode(600, 900), "Escape the Dungeon");
     
     Player player(10,5,0,100,100);
+    ChaserEnemy test(2, 500, 500);
 
     window.setFramerateLimit(60);
 
@@ -21,7 +23,11 @@ int main() {
 
         player.update(0);
 
+        test.move_Ennemi(player.getX(), player.getY());
+        test.update(0);
+
         window.clear();
+        test.draw(window);
         player.draw(window);
         window.display();
     }

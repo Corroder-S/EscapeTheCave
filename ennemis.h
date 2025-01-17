@@ -4,7 +4,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "entity.cpp"
+#include "entity.h"
 
 using namespace sf;
 
@@ -16,6 +16,7 @@ protected:
 	int x;
 	int y;
 	Sprite ennemi_s;
+	Texture ennemi_t;
 public:
 
 	Ennemi(int vie, int v, int d, int x, int y);
@@ -27,7 +28,7 @@ public:
 	int getY();
 	Sprite* getSprite();
 
-	virtual void move_Ennemi() = 0;
+	virtual void move_Ennemi(int x_player, int y_player) = 0;
 	
 	void draw(RenderWindow& window) override;
 	void update(float deltaTime) override;

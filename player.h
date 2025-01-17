@@ -4,7 +4,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "entity.cpp"
+#include "entity.h"
 using namespace sf;
 
 class Player : public Entity {
@@ -12,7 +12,6 @@ protected:
 	int vie;
 	int vitesse;
 	int direction;
-
 	int x, y;
 
 	Sprite player_s;

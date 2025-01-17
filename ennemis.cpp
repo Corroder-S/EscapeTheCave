@@ -26,6 +26,5 @@ void Ennemi::draw(RenderWindow& window) {
 }
 
 void Ennemi::update(float deltaTime) {
-	move_Ennemi();
 	ennemi_s.setPosition(x, y);
 }
