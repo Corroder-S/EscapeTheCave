@@ -20,10 +20,8 @@ void PatrollingEnemy::move_Enemy() {
     else if (y < ya) y += vitesse;
     else if (y > ya) y -= vitesse;
 
-    std::cout << "Current position: (" << xd << ", " << ya << ")" << std::endl;
 
     if (x == xa && y == ya && checkint > 1) {
-        std::cout << "CHANGE" << std::endl;
         check.restart();
         std::swap(xd, xa);
         std::swap(yd, ya);

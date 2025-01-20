@@ -16,6 +16,7 @@ protected:
 	int direction;
 	int x;
 	int y;
+	Vector2f position = Vector2f(float(x), float(y));
 	Sprite ennemi_s;
 	Texture ennemi_t;
 public:

@@ -30,7 +30,7 @@ Sprite* Ennemi::getSprite() {
 }
 
 void Ennemi::setPosition(Vector2f pos) {
-	Vector2f(x, y) = pos;
+	position = pos;
 }
 
 void Ennemi::draw(RenderWindow& window) {

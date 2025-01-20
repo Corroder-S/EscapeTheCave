@@ -27,7 +27,6 @@ void Jeu::collide(Player* player, RenderWindow& window) {
 			delay.restart();
 		}
 	}
-	std::cout << player->getVie() << std::endl;
 }
 
 void Jeu::manage(Player* player, RenderWindow& window) {
