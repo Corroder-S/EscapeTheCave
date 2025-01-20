@@ -6,10 +6,9 @@
 
 class ChaserEnemy : public Ennemi {
 public:
-
 	ChaserEnemy(int d, int x, int y);
-	void move_Ennemi(int x_player, int y_player);
-
+	void move_Enemy(int x_player, int y_player);
+	void move_Enemy();
 };
 
 #endif

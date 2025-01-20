@@ -143,12 +143,16 @@
     <ClCompile Include="chaserEnemy.h" />
     <ClCompile Include="ennemis.cpp" />
     <ClCompile Include="entity.cpp" />
+    <ClCompile Include="jeu.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="patrollingEnemy.cpp" />
+    <ClCompile Include="patrollingEnemy.h" />
     <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ennemis.h" />
     <ClInclude Include="entity.h" />
+    <ClInclude Include="jeu.h" />
     <ClInclude Include="player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

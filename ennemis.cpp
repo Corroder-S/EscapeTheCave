@@ -1,6 +1,14 @@
 #include "ennemis.h"
 
-Ennemi::Ennemi(int vie, int v, int d, int x, int y) :vie(vie), vitesse(v), direction(d), x(x), y(y) {}
+Ennemi::Ennemi(int vie, int v, int d, int x, int y, int t) :vie(vie), vitesse(v), direction(d), x(x), y(y), type(t) {}
+
+int Ennemi::getType() {
+	return type;
+}
+
+Vector2f Ennemi::getPosition() {
+	return Vector2f(x, y);
+}
 
 int Ennemi::getVie() {
 	return vie;
@@ -19,6 +27,10 @@ int Ennemi::getY() {
 }
 Sprite* Ennemi::getSprite() {
 	return &ennemi_s;
+}
+
+void Ennemi::setPosition(Vector2f pos) {
+	Vector2f(x, y) = pos;
 }
 
 void Ennemi::draw(RenderWindow& window) {

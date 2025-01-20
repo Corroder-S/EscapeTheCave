@@ -32,6 +32,10 @@ void Player::setSprite(Sprite sprite) {
 	player_s = sprite;
 }
 
+void Player::setVie(int nvie) {
+	vie = nvie;
+}
+
 void Player::draw(RenderWindow& window) {
 	window.draw(player_s);
 }

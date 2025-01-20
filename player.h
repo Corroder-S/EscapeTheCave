@@ -28,6 +28,7 @@ public:
 	Sprite* getSprite();
 
 	void setSprite(Sprite sprite);
+	void setVie(int nvie);
 	void draw(RenderWindow& window) override;
 	void update(float deltaTime) override;
 	void movePlayer();

@@ -1,15 +1,22 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "jeu.h"
 #include "player.h"
+#include "ennemis.h"
 #include "chaserEnemy.h"
+#include "patrollingEnemy.h"
+
 using namespace sf;
 
 int main() {
 
+    Jeu jeu;
+
 	RenderWindow window(VideoMode(600, 900), "Escape the Dungeon");
     
-    Player player(10,5,0,100,100);
-    ChaserEnemy test(2, 500, 500);
+    Player player(3,5,0,100,100);
+    jeu.generate(1);
+    
 
     window.setFramerateLimit(60);
 
@@ -20,15 +27,9 @@ int main() {
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
         player.update(0);
-
-        test.move_Ennemi(player.getX(), player.getY());
-        test.update(0);
-
         window.clear();
-        test.draw(window);
-        player.draw(window);
+        jeu.manage(&player, window);
         window.display();
     }
 
