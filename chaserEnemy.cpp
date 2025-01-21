@@ -11,17 +11,17 @@ ChaserEnemy::ChaserEnemy(int d, int x, int y) : Ennemi(2, 2, d, x, y, 1){
 void ChaserEnemy::move_Enemy(int x_player, int y_player){
 	Vector2f playerPosition = Vector2f(x_player, y_player);
 	Vector2f chaserPos = ennemi_s.getPosition();
-	Vector2f direction = playerPosition - chaserPos;
-	float distance = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+	Vector2f distance = playerPosition - chaserPos;
+	float magnitude = std::sqrtf(distance.x * distance.x + distance.y * distance.y);
 
-	if (distance > 0) {
-		direction /= distance;
-		chaserPos += direction * float(vitesse);
-		ennemi_s.setPosition(chaserPos);
+	if (magnitude > 0) {
+		distance /= magnitude;
+		chaserPos += distance * float(vitesse);
+		x = chaserPos.x;
+		y = chaserPos.y;
 	}
-	std::cout << ennemi_s.getPosition().x << ' ' << ennemi_s.getPosition().y << std::endl;
 }
 
 void ChaserEnemy::move_Enemy() {
-
+	
 }

@@ -143,6 +143,7 @@
     <ClCompile Include="chaserEnemy.h" />
     <ClCompile Include="ennemis.cpp" />
     <ClCompile Include="entity.cpp" />
+    <ClCompile Include="interactable.cpp" />
     <ClCompile Include="jeu.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="patrollingEnemy.cpp" />
@@ -152,6 +153,8 @@
   <ItemGroup>
     <ClInclude Include="ennemis.h" />
     <ClInclude Include="entity.h" />
+    <ClInclude Include="Interactable.h" />
+    <ClInclude Include="items.h" />
     <ClInclude Include="jeu.h" />
     <ClInclude Include="player.h" />
   </ItemGroup>

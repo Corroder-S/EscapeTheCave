@@ -32,6 +32,7 @@ void Jeu::collide(Player* player, RenderWindow& window) {
 void Jeu::manage(Player* player, RenderWindow& window) {
 	player->draw(window);
 	for (int i = 0; i < ennemis.size(); i++) {
+
 		if (ennemis[i]->getType() == 1) {
 			ennemis[i]->move_Enemy(player->getX(), player->getY());
 		}
