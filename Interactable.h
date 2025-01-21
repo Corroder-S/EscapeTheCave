@@ -2,7 +2,7 @@
 #ifndef INTERACTABLE_H
 #define INTERACTABLE_H
 
-class Player;
+#include "player.h"
 
 class Interactable {
 public:

@@ -5,11 +5,14 @@
 #include "ennemis.h"
 #include "chaserEnemy.h"
 #include "patrollingEnemy.h"
+#include <ctime>
 
 using namespace sf;
 
 int main() {
 
+
+    srand(time(NULL));
     Jeu jeu;
 
 	RenderWindow window(VideoMode(600, 900), "Escape the Dungeon");

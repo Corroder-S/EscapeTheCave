@@ -1,5 +1,5 @@
 #include "patrollingEnemy.h"
-Clock check;
+
 
 PatrollingEnemy::PatrollingEnemy(int xd, int yd, int xa, int ya, int d, int x, int y) : xd(xd), yd(yd), xa(xa), ya(ya), Ennemi(5, 2, d, x, y, 2){
 	if (!ennemi_t.loadFromFile("assets/skeleton_neutral_down.png")) {

@@ -8,10 +8,14 @@
 #include "ennemis.h"
 #include "patrollingEnemy.h"
 #include "chaserEnemy.h"
+#include "items.h"
+#include "potion.h"
+#include "key.h"
 
 class Jeu {
 public:
-	Clock delay;
+	Clock hitDelay;
+	Clock speedupDelay;
 	Texture coeur;
 	Sprite coeur1;
 	Sprite coeur2;
@@ -20,6 +24,7 @@ public:
 	Jeu();
 
 	std::vector<Ennemi*> ennemis;
+	std::vector<Item*> items;
 
 	void generate(int room);
 

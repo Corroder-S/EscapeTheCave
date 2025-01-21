@@ -24,6 +24,15 @@ int Player::getX() {
 int Player::getY() {
 	return y;
 }
+
+int Player::getKeyCount() {
+	return keycount;
+}
+
+bool Player::getSpeedUp() {
+	return speedup;
+}
+
 Sprite* Player::getSprite() {
 	return &player_s;
 }
@@ -34,6 +43,18 @@ void Player::setSprite(Sprite sprite) {
 
 void Player::setVie(int nvie) {
 	vie = nvie;
+}
+
+void Player::setKeyCount(int nb) {
+	keycount = nb;
+}
+
+void Player::setVitesse(int nb) {
+	vitesse = nb;
+}
+
+void Player::setSpeedUp(bool b) {
+	speedup = b;
 }
 
 void Player::draw(RenderWindow& window) {

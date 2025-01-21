@@ -7,6 +7,8 @@
 
 class PatrollingEnemy : public Ennemi {
 public:
+	Clock check;
+	
 
 	int xd, yd, xa, ya;
 
