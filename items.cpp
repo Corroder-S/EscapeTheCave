@@ -2,6 +2,7 @@
 
 Item::Item(int x, int y, int t): x(x), y(y), type(t){}
 
+
 void Item::interact(Player& player) {
 	if (type == 1) {
 		player.setVitesse(player.getVitesse() * 1.5);

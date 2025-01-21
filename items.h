@@ -20,7 +20,7 @@ protected:
 public:
 
 	Item(int x, int y, int t);
-	
+
 	int getType();
 	Sprite* getSprite();
 
