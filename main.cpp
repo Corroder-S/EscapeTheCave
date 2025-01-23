@@ -4,6 +4,7 @@
 #include "player.h"
 #include "ennemis.h"
 #include "chaserEnemy.h"
+#include "map.h"
 #include "patrollingEnemy.h"
 #include <ctime>
 
@@ -22,6 +23,7 @@ int main() {
     
 
     window.setFramerateLimit(60);
+    Map map;
 
 
     while (window.isOpen()) {
@@ -32,6 +34,12 @@ int main() {
         }
         player.update(0);
         window.clear();
+        for (int i = 0; i < map.walls.size(); i++) {
+            window.draw(map.walls[i]->wall_rect);
+        }
+        for (int i = 0; i < map.floors.size(); i++) {
+            window.draw(map.floors[i]->floor_rect);
+        }
         jeu.manage(&player, window);
         window.display();
     }

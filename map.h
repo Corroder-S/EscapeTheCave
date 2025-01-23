@@ -4,18 +4,22 @@
 
 #include <SFML/Graphics.hpp>
 #include <vector>
-#include "fstream"
+#include <fstream>
+#include <iostream>
+#include "wall.h"
+#include "floor.h"
 
 using namespace sf;
 
 class Map {
 public:
 
-	std::ifstream mapfile("assets/map.txt");
-	Texture wall_t;
-	Texture floor_t;
-	std::vector<RectangleShape*> walls;
+	std::ifstream mapfile;
+	std::vector<Wall*> walls;
+	std::vector<Floor*> floors;
 
+
+	Map();
 };
 
 #endif

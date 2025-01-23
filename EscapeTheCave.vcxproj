@@ -143,19 +143,23 @@
     <ClCompile Include="chaserEnemy.h" />
     <ClCompile Include="ennemis.cpp" />
     <ClCompile Include="entity.cpp" />
+    <ClCompile Include="floor.cpp" />
     <ClCompile Include="interactable.cpp" />
     <ClCompile Include="items.cpp" />
     <ClCompile Include="jeu.cpp" />
     <ClCompile Include="key.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="map.cpp" />
     <ClCompile Include="patrollingEnemy.cpp" />
     <ClCompile Include="patrollingEnemy.h" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="potion.cpp" />
+    <ClCompile Include="wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ennemis.h" />
     <ClInclude Include="entity.h" />
+    <ClInclude Include="floor.h" />
     <ClInclude Include="Interactable.h" />
     <ClInclude Include="items.h" />
     <ClInclude Include="jeu.h" />
@@ -163,6 +167,7 @@
     <ClInclude Include="map.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="potion.h" />
+    <ClInclude Include="wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
