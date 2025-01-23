@@ -14,9 +14,11 @@ Map::Map() {
 			else if (line[i] == ' ') {
 				floors.push_back(new Floor(i * 50, y * 50, 50, 50));
 			}
+			else if (line[i] == 'D') {
+				doors.push_back(new Door(i * 50, y * 50, 50, 50));
+			}
 		}
 		y++;
-		std::cout << std::endl;
 
 	}
 }

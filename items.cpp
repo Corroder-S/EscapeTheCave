@@ -7,11 +7,9 @@ void Item::interact(Player& player) {
 	if (type == 1) {
 		player.setVitesse(player.getVitesse() * 1.5);
 		player.setSpeedUp(true);
-		std::cout << "speed" << std::endl;
 	}
 	if (type == 2) {
 		player.setKeyCount(player.getKeyCount() + 1);
-		std::cout << "key" << std::endl;
 	}
 }
 

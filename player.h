@@ -32,6 +32,7 @@ public:
 	int getKeyCount();
 	Sprite* getSprite();
 
+	void setPosition(int nx , int ny);
 	void setSpeedUp(bool b);
 	void setSprite(Sprite sprite);
 	void setVie(int nvie);

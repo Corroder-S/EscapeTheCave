@@ -2,10 +2,6 @@
 #include <SFML/Graphics.hpp>
 #include "jeu.h"
 #include "player.h"
-#include "ennemis.h"
-#include "chaserEnemy.h"
-#include "map.h"
-#include "patrollingEnemy.h"
 #include <ctime>
 
 using namespace sf;
@@ -18,12 +14,11 @@ int main() {
 
 	RenderWindow window(VideoMode(600, 900), "Escape the Dungeon");
     
-    Player player(3,5,0,100,100);
+    Player player(3,3,0,100,100);
     jeu.generate(1);
     
 
     window.setFramerateLimit(60);
-    Map map;
 
 
     while (window.isOpen()) {
@@ -34,12 +29,7 @@ int main() {
         }
         player.update(0);
         window.clear();
-        for (int i = 0; i < map.walls.size(); i++) {
-            window.draw(map.walls[i]->wall_rect);
-        }
-        for (int i = 0; i < map.floors.size(); i++) {
-            window.draw(map.floors[i]->floor_rect);
-        }
+        
         jeu.manage(&player, window);
         window.display();
     }

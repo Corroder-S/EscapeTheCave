@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="chaserEnemy.cpp" />
     <ClCompile Include="chaserEnemy.h" />
+    <ClCompile Include="door.cpp" />
     <ClCompile Include="ennemis.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="floor.cpp" />
@@ -157,6 +158,7 @@
     <ClCompile Include="wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="door.h" />
     <ClInclude Include="ennemis.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="floor.h" />

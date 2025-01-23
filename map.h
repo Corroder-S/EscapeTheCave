@@ -8,6 +8,7 @@
 #include <iostream>
 #include "wall.h"
 #include "floor.h"
+#include "door.h"
 
 using namespace sf;
 
@@ -17,6 +18,7 @@ public:
 	std::ifstream mapfile;
 	std::vector<Wall*> walls;
 	std::vector<Floor*> floors;
+	std::vector<Door*> doors;
 
 
 	Map();

@@ -11,6 +11,7 @@
 #include "items.h"
 #include "potion.h"
 #include "key.h"
+#include "map.h"
 
 class Jeu {
 public:
@@ -20,6 +21,7 @@ public:
 	Sprite coeur1;
 	Sprite coeur2;
 	Sprite coeur3;
+	Map map;
 
 	Jeu();
 

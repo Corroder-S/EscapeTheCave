@@ -6,7 +6,7 @@ Player::Player(int vie, int v, int d, int x, int y) : vie(vie), vitesse(v), dire
 	}
 	player_s.setTexture(player_t);
 	player_s.setPosition(x, y);
-	player_s.scale(2, 2);
+	player_s.scale(1, 1);
 }
 
 int Player::getVie() {
@@ -35,6 +35,11 @@ bool Player::getSpeedUp() {
 
 Sprite* Player::getSprite() {
 	return &player_s;
+}
+
+void Player::setPosition(int nx, int ny) {
+	x = nx;
+	y = ny;
 }
 
 void Player::setSprite(Sprite sprite) {
