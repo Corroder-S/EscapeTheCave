@@ -33,72 +33,54 @@ void Jeu::collide(Player* player, sf::RenderWindow& window) {
 	}
 
 	for (int i = 0; i < map.walls.size(); i++) {
-		if (player->getSprite()->getGlobalBounds().intersects(map.walls[i]->wall_rect.getGlobalBounds())) {
-			sf::FloatRect wallBounds = map.walls[i]->wall_rect.getGlobalBounds();
-			sf::FloatRect playerBounds = player->getSprite()->getGlobalBounds();
+		if (player->getSprite()->getGlobalBounds().intersects(map.walls[i]->wall_rect.getGlobalBounds()) && player->getDirection() == 1) {
+			player->setPosition(player->getX(), map.walls[i]->wall_rect.getPosition().y + 50);
+		}
+		else if (player->getSprite()->getGlobalBounds().intersects(map.walls[i]->wall_rect.getGlobalBounds()) && player->getDirection() == 2) {
+			player->setPosition(map.walls[i]->wall_rect.getPosition().x - 40 , player->getY());
+		}
+		else if (player->getSprite()->getGlobalBounds().intersects(map.walls[i]->wall_rect.getGlobalBounds()) && player->getDirection() == 3) {
+			player->setPosition(player->getX(), map.walls[i]->wall_rect.getPosition().y - 40);
+		}
+		else if (player->getSprite()->getGlobalBounds().intersects(map.walls[i]->wall_rect.getGlobalBounds()) && player->getDirection() == 4) {
+			player->setPosition(map.walls[i]->wall_rect.getPosition().x+ 50, player->getY());
+		}
+	}
 
-			if (playerBounds.left < wallBounds.left && playerBounds.left + playerBounds.width > wallBounds.left) {
-				player->setPosition(wallBounds.left - playerBounds.width, playerBounds.top);
+	for (int i = 0; i < map.doors.size(); i++) {
+		if (!map.doors[i]->open) {
+			if (player->getSprite()->getGlobalBounds().intersects(map.doors[i]->door_rect.getGlobalBounds()) && player->getDirection() == 1) {
+				player->setPosition(player->getX(), map.doors[i]->door_rect.getPosition().y + 50);
+				if (player->getKeyCount() > 0) {
+					map.doors[i]->open = true;
+					player->setKeyCount(player->getKeyCount() - 1);
+				}
 			}
-			else if (playerBounds.left > wallBounds.left && playerBounds.left < wallBounds.left + wallBounds.width) {
-				player->setPosition(wallBounds.left + wallBounds.width, playerBounds.top);
+			else if (player->getSprite()->getGlobalBounds().intersects(map.doors[i]->door_rect.getGlobalBounds()) && player->getDirection() == 2) {
+				player->setPosition(map.doors[i]->door_rect.getPosition().x - 40, player->getY());
+				if (player->getKeyCount() > 0) {
+					map.doors[i]->open = true;
+					player->setKeyCount(player->getKeyCount() - 1);
+				}
 			}
-			if (playerBounds.top < wallBounds.top && playerBounds.top + playerBounds.height > wallBounds.top) {
-				player->setPosition(playerBounds.left, wallBounds.top - playerBounds.height);
+			else if (player->getSprite()->getGlobalBounds().intersects(map.doors[i]->door_rect.getGlobalBounds()) && player->getDirection() == 3) {
+				player->setPosition(player->getX(), map.doors[i]->door_rect.getPosition().y - 40);
+				if (player->getKeyCount() > 0) {
+					map.doors[i]->open = true;
+					player->setKeyCount(player->getKeyCount() - 1);
+				}
 			}
-			else if (playerBounds.top > wallBounds.top && playerBounds.top < wallBounds.top + wallBounds.height) {
-				player->setPosition(playerBounds.left, wallBounds.top + wallBounds.height);
+			else if (player->getSprite()->getGlobalBounds().intersects(map.doors[i]->door_rect.getGlobalBounds()) && player->getDirection() == 4) {
+				player->setPosition(map.doors[i]->door_rect.getPosition().x + 50, player->getY());
+				if (player->getKeyCount() > 0) {
+					map.doors[i]->open = true;
+					player->setKeyCount(player->getKeyCount() - 1);
+				}
 			}
 		}
 	}
-	for (int i = 0; i < map.doors.size(); i++) {
-		if (player->getSprite()->getGlobalBounds().intersects(map.doors[i]->door_rect.getGlobalBounds())) {
-			if (player->getKeyCount() == 0 && !map.doors[i]->open) {
-				sf::FloatRect doorBounds = map.doors[i]->door_rect.getGlobalBounds();
-				sf::FloatRect playerBounds = player->getSprite()->getGlobalBounds();
 
-				if (playerBounds.left < doorBounds.left && playerBounds.left + playerBounds.width > doorBounds.left) {
-					player->setPosition(doorBounds.left - playerBounds.width, playerBounds.top);
-				}
-				else if (playerBounds.left > doorBounds.left && playerBounds.left < doorBounds.left + doorBounds.width) {
-					player->setPosition(doorBounds.left + doorBounds.width, playerBounds.top);
-				}
-				if (playerBounds.top < doorBounds.top && playerBounds.top + playerBounds.height > doorBounds.top) {
-					player->setPosition(playerBounds.left, doorBounds.top - playerBounds.height);
-				}
-				else if (playerBounds.top > doorBounds.top && playerBounds.top < doorBounds.top + doorBounds.height) {
-					player->setPosition(playerBounds.left, doorBounds.top + doorBounds.height);
-				}
-			}
-			else if (player->getKeyCount() > 0) {
-				player->setKeyCount(player->getKeyCount() - 1);
-				map.doors[i]->open = true;
-			}
-		}
-
-		for (int i = 0; i < ennemis.size(); i++) {
-			for (int j = 0; j < map.walls.size(); j++) {
-				if (ennemis[i]->getSprite()->getGlobalBounds().intersects(map.walls[j]->wall_rect.getGlobalBounds())) {
-					sf::FloatRect wallBounds = map.walls[j]->wall_rect.getGlobalBounds();
-					sf::FloatRect enemyBounds = ennemis[i]->getSprite()->getGlobalBounds();
-
-					if (enemyBounds.left < wallBounds.left && enemyBounds.left + enemyBounds.width > wallBounds.left) {
-						ennemis[i]->setPosition(Vector2f(wallBounds.left - enemyBounds.width, enemyBounds.top));
-					}
-					else if (enemyBounds.left > wallBounds.left && enemyBounds.left < wallBounds.left + wallBounds.width) {
-						ennemis[i]->setPosition(Vector2f(wallBounds.left + wallBounds.width, enemyBounds.top));
-					}
-					if (enemyBounds.top < wallBounds.top && enemyBounds.top + enemyBounds.height > wallBounds.top) {
-						ennemis[i]->setPosition(Vector2f(enemyBounds.left, wallBounds.top - enemyBounds.height));
-					}
-					else if (enemyBounds.top > wallBounds.top && enemyBounds.top < wallBounds.top + wallBounds.height) {
-						ennemis[i]->setPosition(Vector2f(enemyBounds.left, wallBounds.top + wallBounds.height));
-					}
-				}
-			}
-		}
-
-		for (auto it = items.begin(); it != items.end();) {
+	for (auto it = items.begin(); it != items.end();) {
 			if (player->getSprite()->getGlobalBounds().intersects((*it)->getSprite()->getGlobalBounds())) {
 				(*it)->interact(*player);
 				if ((*it)->getType() == 1) {
@@ -112,12 +94,13 @@ void Jeu::collide(Player* player, sf::RenderWindow& window) {
 				++it;
 			}
 		}
-	}
 }
 
 
 
 	void Jeu::manage(Player * player, RenderWindow & window) {
+		int chronoint = chrono.getElapsedTime().asSeconds();
+		std::cout << 30-chronoint << std::endl;
 		int speedupDelay_int = speedupDelay.getElapsedTime().asSeconds();
 		if (player->getSpeedUp() && speedupDelay_int > 2) {
 			player->setVitesse((player->getVitesse() / 1.5) + 1);

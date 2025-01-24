@@ -15,12 +15,15 @@
 
 class Jeu {
 public:
+	bool playing = false;
+	Clock chrono;
 	Clock hitDelay;
 	Clock speedupDelay;
 	Texture coeur;
 	Sprite coeur1;
 	Sprite coeur2;
 	Sprite coeur3;
+	Text chrono_aff;
 	Map map;
 
 	Jeu();
