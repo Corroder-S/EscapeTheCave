@@ -16,14 +16,24 @@
 class Jeu {
 public:
 	bool playing = false;
+	bool start = true;
+	bool gameover = false;
+	bool win = true;
 	Clock chrono;
 	Clock hitDelay;
 	Clock speedupDelay;
 	Texture coeur;
+	Texture backt;
+	Texture backtalt;
 	Sprite coeur1;
 	Sprite coeur2;
 	Sprite coeur3;
+	Sprite back;
 	Text chrono_aff;
+	Text title;
+	Text starttxt;
+	RectangleShape button;
+	Font font;
 	Map map;
 
 	Jeu();
