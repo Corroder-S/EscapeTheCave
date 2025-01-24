@@ -12,7 +12,7 @@ public:
 
 	int xd, yd, xa, ya;
 
-	PatrollingEnemy(int xd, int yd, int xa, int ya, int d, int x, int y);
+	PatrollingEnemy(int xd, int yd, int xa, int ya, int x, int y);
 	void move_Enemy();
 	void move_Enemy(int x_player, int y_player);
 };

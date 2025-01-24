@@ -87,12 +87,8 @@ void Player::movePlayer() {
 			animate.restart();
 		}
 	}
-	else if (direction == 1) {
-		if (!player_t.loadFromFile("assets/player_neutral_up.png")) {
-			return;
-		}
-	}
-	if (Keyboard::isKeyPressed(Keyboard::Right)) {
+	
+	else if (Keyboard::isKeyPressed(Keyboard::Right)) {
 		x += vitesse;
 		direction = 2;
 		if (i2 > 4) i2 = 1;
@@ -104,13 +100,9 @@ void Player::movePlayer() {
 			animate.restart();
 		}
 	}
-	else if (direction == 2) {
-		if (!player_t.loadFromFile("assets/player_neutral_right.png")) {
-			return;
-		}
-	}
+	
 
-	if (Keyboard::isKeyPressed(Keyboard::Down)) {
+	else if (Keyboard::isKeyPressed(Keyboard::Down)) {
 		y+= vitesse;
 		direction = 3;
 		if (i3 > 4) i3 = 1;
@@ -122,13 +114,9 @@ void Player::movePlayer() {
 			animate.restart();
 		}
 	}
-	else if (direction == 3) {
-		if (!player_t.loadFromFile("assets/player_neutral_down.png")) {
-			return;
-		}
-	}
+	
 
-	if (Keyboard::isKeyPressed(Keyboard::Left)) {
+	else if (Keyboard::isKeyPressed(Keyboard::Left)) {
 		x -= vitesse;
 		direction = 4;
 		if (i4 > 4) i4 = 1;
@@ -141,6 +129,26 @@ void Player::movePlayer() {
 		}
 		
 	}
+
+
+	else if (direction == 1) {
+		if (!player_t.loadFromFile("assets/player_neutral_up.png")) {
+			return;
+		}
+	}
+
+	else if (direction == 2) {
+		if (!player_t.loadFromFile("assets/player_neutral_right.png")) {
+			return;
+		}
+	}
+
+	else if (direction == 3) {
+		if (!player_t.loadFromFile("assets/player_neutral_down.png")) {
+			return;
+		}
+	}
+
 	else if (direction == 4) {
 		if (!player_t.loadFromFile("assets/player_neutral_left.png")) {
 			return;

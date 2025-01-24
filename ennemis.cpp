@@ -1,6 +1,6 @@
 #include "ennemis.h"
 
-Ennemi::Ennemi(int vie, int v, int d, int x, int y, int t) :vie(vie), vitesse(v), direction(d), x(x), y(y), type(t) {}
+Ennemi::Ennemi(int vie, int v,  int x, int y, int t) :vie(vie), vitesse(v), x(x), y(y), type(t) {}
 
 int Ennemi::getType() {
 	return type;
@@ -15,9 +15,6 @@ int Ennemi::getVie() {
 }
 int Ennemi::getVitesse() {
 	return vitesse;
-}
-int Ennemi::getDirection() {
-	return direction;
 }
 int Ennemi::getX() {
 	return x;

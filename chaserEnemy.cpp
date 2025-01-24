@@ -1,6 +1,6 @@
 #include "chaserEnemy.h"
 
-ChaserEnemy::ChaserEnemy(int d, int x, int y) : Ennemi(2, 2, d, x, y, 1){
+ChaserEnemy::ChaserEnemy(int t, int x, int y) : Ennemi(2, 2, x, y, 1){
 	if (!ennemi_t.loadFromFile("assets/bat_neutral_down.png")) {
 		return;
 	}
@@ -16,7 +16,7 @@ void ChaserEnemy::move_Enemy(int x_player, int y_player){
 
 	if (magnitude > 0) {
 		distance /= magnitude;
-		chaserPos += distance * float(vitesse);
+		chaserPos += distance * (float(vitesse));
 		x = chaserPos.x;
 		y = chaserPos.y;
 	}

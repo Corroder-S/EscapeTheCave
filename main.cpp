@@ -14,7 +14,7 @@ int main() {
 
 	RenderWindow window(VideoMode(600, 900), "Escape the Dungeon");
     
-    Player player(3,3,0,100,100);
+    Player player(3,4,0,50,50);
     jeu.generate(1);
     
 

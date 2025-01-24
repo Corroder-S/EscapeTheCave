@@ -18,20 +18,26 @@ public:
 	bool playing = false;
 	bool start = true;
 	bool gameover = false;
-	bool win = true;
+	bool win = false;
 	Clock chrono;
 	Clock hitDelay;
 	Clock speedupDelay;
+	Clock backMenu;
 	Texture coeur;
 	Texture backt;
 	Texture backtalt;
+	Texture back_neutral;
 	Sprite coeur1;
 	Sprite coeur2;
 	Sprite coeur3;
 	Sprite back;
 	Text chrono_aff;
 	Text title;
+	Text gameovertxt;
+	Text backtomenu;
+	Text uwon;
 	Text starttxt;
+
 	RectangleShape button;
 	Font font;
 	Map map;

@@ -13,7 +13,6 @@ protected:
 	int type;
 	int vie;
 	int vitesse;
-	int direction;
 	int x;
 	int y;
 	Vector2f position = Vector2f(float(x), float(y));
@@ -21,13 +20,12 @@ protected:
 	Texture ennemi_t;
 public:
 
-	Ennemi(int vie, int v, int d, int x, int y, int t);
+	Ennemi(int vie, int v,  int x, int y, int t);
 
 	int getType();
 	Vector2f getPosition();
 	int getVie();
 	int getVitesse();
-	int getDirection();
 	int getX();
 	int getY();
 	Sprite* getSprite();
